@@ -19,6 +19,8 @@ using namespace soci::details;
 void* odbc_standard_use_type_backend::prepare_for_bind(
     SQLLEN &size, SQLSMALLINT &sqlType, SQLSMALLINT &cType)
 {
+    indHolder_ = 0;
+
     switch (type_)
     {
     // simple cases
